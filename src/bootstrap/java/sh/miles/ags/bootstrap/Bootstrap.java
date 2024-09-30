@@ -45,7 +45,6 @@ public class Bootstrap {
         final List<URL> extractedLibraries = new ArrayList<>();
         readLibraryEntries(LIBS_EXTERNAL_FOLDER, ".", extractedLibraries);
         readLibraryEntries(VERSIONS_EXTERNAL_FOLDER, ".", extractedLibraries);
-        System.out.println(extractedLibraries.stream().map(URL::toString).toList());
 
         final ClassLoader loader = this.getClass().getClassLoader();
         final URLClassLoader serviceLoader = new URLClassLoader(extractedLibraries.toArray(URL[]::new), loader);

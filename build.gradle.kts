@@ -1,5 +1,4 @@
 import org.gradle.crypto.checksum.Checksum
-import java.nio.file.Files
 
 plugins {
     id("java")
@@ -7,7 +6,7 @@ plugins {
 }
 
 group = "sh.miles.ags"
-version = "1.0.1-SNAPSHOT"
+version = "1.0.2-SNAPSHOT"
 
 val bundled by project.configurations.registering
 project.configurations.named("implementation") {

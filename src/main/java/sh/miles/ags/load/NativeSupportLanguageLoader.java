@@ -26,7 +26,6 @@ public final class NativeSupportLanguageLoader {
         final String format = "/langs/%s/lang.json";
 
         for (final String language : LANGUAGES) {
-            System.out.println(language);
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(Main.class.getResourceAsStream(format.formatted(language))))) {
                 final Path exportTo = languagesFolder.resolve("%s/lang.json".formatted(language));
                 if (Files.notExists(exportTo.getParent())) {
