@@ -2,5 +2,5 @@
   "language": "en-us",
   "language_folder": "languages",
   "replace_with_defaults": true,
-  "debug": true
+  "debug": false
 }
