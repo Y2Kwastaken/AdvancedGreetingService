@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "sh.miles.ags"
-version = "1.0-SNAPSHOT"
+version = "1.0.1-SNAPSHOT"
 
 val bundled by project.configurations.registering
 project.configurations.named("implementation") {

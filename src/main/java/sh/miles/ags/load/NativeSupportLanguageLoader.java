@@ -25,25 +25,20 @@ public final class NativeSupportLanguageLoader {
     public static void exportLoadedLanguages(final Path languagesFolder, boolean replaceExisting) {
         final String format = "/langs/%s/lang.json";
 
-        System.out.println("export");
         for (final String language : LANGUAGES) {
             System.out.println(language);
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(Main.class.getResourceAsStream(format.formatted(language))))) {
                 final Path exportTo = languagesFolder.resolve("%s/lang.json".formatted(language));
                 if (Files.notExists(exportTo.getParent())) {
-                    System.out.println("dir already exists");
                     Files.createDirectories(exportTo.getParent());
                 }
 
                 if (replaceExisting || Files.notExists(exportTo)) {
-                    System.out.println("file already exists");
                     Files.writeString(exportTo, reader.lines().collect(Collectors.joining("\n")));
                 }
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            System.out.printf("end %s%n", language);
         }
-        System.out.println("end export");
     }
 }
