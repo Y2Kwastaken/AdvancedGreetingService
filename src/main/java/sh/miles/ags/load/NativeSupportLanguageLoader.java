@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public final class NativeSupportLanguageLoader {
 
     private static final List<String> LANGUAGES = List.of(
-            "en/uk",
+            "en/gb",
             "en/us",
             "en/uwu"
     );
